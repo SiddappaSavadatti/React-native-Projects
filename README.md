@@ -20,7 +20,7 @@ Compatible with Android, iOS, and Web using Expo's powerful framework.
 
 
 📦 How to Run
-git clone https://github.com/yourusername/React-native-Projects.git
+git clone  https://github.com/SiddappaSavadatti/React-native-Projects.git
 cd React-native-Projects/Mini-game-app
 npm install
 npm start
