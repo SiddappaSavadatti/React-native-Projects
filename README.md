@@ -45,6 +45,6 @@ A cross-platform mobile app built with **React Native (Bare Workflow)** that sho
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
+git clone https://github.com/SiddappaSavadatti/React-native-Projects.git
 cd your-repo
 git checkout project3
