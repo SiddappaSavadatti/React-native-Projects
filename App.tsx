@@ -1,28 +1,41 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React from 'react';
+import CategoriesScreen from './src/Screens/CategoriesScreen';
+import { StatusBar } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import MealsOverScreen from './src/Screens/MealsOverScreen';
+import MealDetailScreen from './src/Screens/MealDetailScreen';
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+const Stack = createNativeStackNavigator();
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
+const App = () => {
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
+    <>
+      <StatusBar />
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={
+          {
+            headerStyle: { backgroundColor: '#351401' },
+            headerTintColor: 'white',
+            contentStyle: { backgroundColor: '#3f2f25' },
+          }
+        }>
+          <Stack.Screen
+            name="Categories"
+            component={CategoriesScreen}
+            options={{
+              title: 'Meal Categories',
+            }}
+          />
+          <Stack.Screen
+            name="Meals"
+            component={MealsOverScreen}
+          />
+          <Stack.Screen  name='MealDetails' component={MealDetailScreen}/>
+        </Stack.Navigator>
+      </NavigationContainer>
+    </>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+};
 
 export default App;
